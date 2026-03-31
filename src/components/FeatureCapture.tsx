@@ -30,6 +30,8 @@ function DarkStatusBar() {
 }
 
 export function FeatureCapture() {
+  const cameraBackgroundImage = `url(${import.meta.env.BASE_URL}camera-bg.png)`
+
   return (
     <section
       id="capture"
@@ -66,7 +68,7 @@ export function FeatureCapture() {
               <div className="relative flex flex-1 self-stretch overflow-clip rounded-2xl bg-[#1A1A18]">
                 <div
                   className="absolute inset-0 bg-cover bg-[51%_58%]"
-                  style={{ backgroundImage: 'url(/camera-bg.png)' }}
+                  style={{ backgroundImage: cameraBackgroundImage }}
                 />
                 {/* Receipt overlay */}
                 <div className="absolute bottom-[112px] left-[45px] right-[43px] top-[88px] flex flex-col rounded-[3px] bg-[#FFFFFFF0] px-4 py-5 [box-shadow:0_4px_16px_#00000014]">

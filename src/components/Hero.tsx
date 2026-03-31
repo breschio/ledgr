@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { FadeIn, Stagger } from './FadeIn'
 
 export function Hero() {
+  const heroVideoSrc = `${import.meta.env.BASE_URL}AppFlow.mp4`
   const sectionRef = useRef<HTMLElement | null>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -77,7 +78,7 @@ export function Hero() {
             className="h-auto w-auto max-h-[min(68vh,640px)] max-w-[320px] md:max-h-[min(96svh,1378px)] md:max-w-[773px]"
             aria-label="App demo: scanning a receipt, categorizing expenses, and viewing insights"
           >
-            <source src="/AppFlow.mp4" type="video/mp4" />
+            <source src={heroVideoSrc} type="video/mp4" />
           </video>
         </motion.div>
       </FadeIn>
