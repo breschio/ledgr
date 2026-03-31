@@ -4,12 +4,12 @@ import { PhoneMockup } from './PhoneMockup'
 
 export function FeatureInsights() {
   const insightsClipSrc = clipUrl('clips/InsightsClip.mp4')
-  const backgroundVideoSrc = clipUrl('insights-pixel-bg.webm')
+  const backgroundVideoSrc = clipUrl('hero-pixel-bg.webm')
 
   return (
     <section
       id="insights"
-      className="relative isolate overflow-hidden bg-[#1A1916] [font-synthesis:none] antialiased text-xs/4"
+      className="relative isolate overflow-hidden bg-[#FAF9F6] [font-synthesis:none] antialiased text-xs/4"
       aria-labelledby="feature-insights-heading"
     >
       <video
@@ -24,7 +24,7 @@ export function FeatureInsights() {
         <source src={backgroundVideoSrc} type="video/webm" />
       </video>
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-[#1A1916]/45"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[#FAF9F6]/55"
         aria-hidden
       />
       <div className="relative z-[2] mx-auto flex max-w-[1440px] flex-col items-center gap-12 px-5 py-[min(120px,12vh)] lg:flex-row lg:items-center lg:gap-20 lg:px-20">
@@ -37,13 +37,13 @@ export function FeatureInsights() {
           <FadeIn direction="up">
             <h2
               id="feature-insights-heading"
-              className="inline-block font-['Instrument_Serif',serif] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.04] tracking-[-0.03em] text-white lg:text-[56px]/[58px]"
+              className="inline-block font-['Instrument_Serif',serif] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.04] tracking-[-0.03em] text-[#1A1916] lg:text-[56px]/[58px]"
             >
               See where it goes.
             </h2>
           </FadeIn>
           <FadeIn direction="up">
-            <p className="max-w-[420px] font-['DM_Sans',sans-serif] text-lg/7 text-[#FFFFFF73]">
+            <p className="max-w-[420px] font-['DM_Sans',sans-serif] text-lg/7 text-[#9A9690]">
               Breakdowns by category, merchant, and month. No spreadsheets. No
               guesswork. Just clarity.
             </p>
