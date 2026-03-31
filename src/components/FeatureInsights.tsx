@@ -4,14 +4,30 @@ import { PhoneMockup } from './PhoneMockup'
 
 export function FeatureInsights() {
   const insightsClipSrc = clipUrl('clips/InsightsClip.mp4')
+  const backgroundVideoSrc = clipUrl('insights-pixel-bg.webm')
 
   return (
     <section
       id="insights"
-      className="bg-[#1A1916] [font-synthesis:none] antialiased text-xs/4"
+      className="relative isolate overflow-hidden bg-[#1A1916] [font-synthesis:none] antialiased text-xs/4"
       aria-labelledby="feature-insights-heading"
     >
-      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-12 px-5 py-[min(120px,12vh)] lg:flex-row lg:items-center lg:gap-20 lg:px-20">
+      <video
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
+        aria-hidden
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+      >
+        <source src={backgroundVideoSrc} type="video/webm" />
+      </video>
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-[#1A1916]/45"
+        aria-hidden
+      />
+      <div className="relative z-[2] mx-auto flex max-w-[1440px] flex-col items-center gap-12 px-5 py-[min(120px,12vh)] lg:flex-row lg:items-center lg:gap-20 lg:px-20">
         <Stagger className="flex flex-1 flex-col gap-5">
           <FadeIn direction="up">
             <p className="inline-block font-['DM_Sans',sans-serif] text-[13px]/4 font-medium uppercase tracking-widest text-[#D4502C]">
