@@ -4,7 +4,7 @@ export function SiteFooter() {
       id="about"
       className="[font-synthesis:none] border-t border-solid border-[#E5E2DC] antialiased text-xs/4"
     >
-      <div className="mx-auto flex max-w-[1440px] flex-col items-start gap-6 px-5 py-10 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between md:px-20">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start gap-6 px-6 py-10 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between md:px-20">
         <div className="inline-block shrink-0 font-['Instrument_Serif',serif] text-[22px]/7 tracking-[-0.02em] text-[#1A1916]">
           Ledgr.
         </div>

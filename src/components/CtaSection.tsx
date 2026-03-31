@@ -4,9 +4,10 @@ export function CtaSection() {
   return (
     <section
       id="get-started"
-      className="[font-synthesis:none] mx-auto flex max-w-[1440px] flex-col items-center gap-8 px-5 py-[min(120px,12vh)] antialiased text-xs/4 md:px-20"
+      className="[font-synthesis:none] w-full antialiased text-xs/4"
       aria-labelledby="cta-heading"
     >
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-8 px-6 py-[min(120px,12vh)] md:px-20">
       <Stagger className="flex flex-col items-center gap-8" stagger={0.12}>
         <FadeIn direction="up">
           <h2
@@ -32,6 +33,7 @@ export function CtaSection() {
           </button>
         </FadeIn>
       </Stagger>
+      </div>
     </section>
   )
 }

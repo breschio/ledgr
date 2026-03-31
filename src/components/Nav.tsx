@@ -1,7 +1,7 @@
 export function Nav() {
   return (
     <nav
-      className="[font-synthesis:none] mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-between gap-4 px-5 py-6 antialiased text-xs/4 sm:px-10 md:px-20"
+      className="[font-synthesis:none] mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-between gap-4 px-6 py-6 antialiased text-xs/4 md:px-20"
       aria-label="Primary"
     >
       <div className="inline-block shrink-0 font-['Instrument_Serif',serif] text-[28px]/8.5 tracking-[-0.02em] text-[#1A1916]">

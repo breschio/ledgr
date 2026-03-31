@@ -11,11 +11,11 @@ export function FeatureCapture() {
       className="bg-[#EEEDE9] [font-synthesis:none] antialiased text-xs/4"
       aria-labelledby="feature-capture-heading"
     >
-      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-12 px-5 py-[min(120px,12vh)] lg:flex-row lg:items-center lg:gap-[60px] lg:px-20">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-6 px-6 py-[min(120px,12vh)] md:flex-row md:items-center md:justify-between md:gap-8 md:px-20">
         <FadeIn
           direction="scale"
           delay={0.15}
-          className="phone-scale order-2 flex flex-1 items-center justify-center lg:order-1"
+          className="phone-scale order-2 flex shrink-0 items-center justify-center px-10 md:order-1 md:translate-x-[156px] md:px-0 lg:translate-x-[180px]"
         >
           <PhoneMockup screenBg="#0A0A0A">
             <video
@@ -32,7 +32,7 @@ export function FeatureCapture() {
           </PhoneMockup>
         </FadeIn>
 
-        <Stagger className="order-1 flex flex-col gap-5 lg:order-2 lg:shrink-0">
+        <Stagger className="order-1 flex flex-col items-center gap-6 text-center md:order-2 md:mr-[80px] md:max-w-[460px] md:items-start md:gap-8 md:text-left lg:shrink-0">
           <FadeIn direction="up">
             <p className="inline-block font-['DM_Sans',sans-serif] text-[13px]/4 font-medium uppercase tracking-widest text-[#D4502C]">
               Capture
@@ -41,7 +41,7 @@ export function FeatureCapture() {
           <FadeIn direction="up">
             <h2
               id="feature-capture-heading"
-              className="inline-block font-['Instrument_Serif',serif] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.04] tracking-[-0.03em] text-[#1A1916] lg:text-[56px]/[58px]"
+              className="inline-block font-['Instrument_Serif',serif] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.04] tracking-[-0.03em] text-[#1A1916] md:text-[56px]/[58px]"
             >
               Point. Shoot. Filed.
             </h2>

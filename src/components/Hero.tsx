@@ -42,7 +42,7 @@ export function Hero() {
         <Nav />
       </header>
       <div className="relative z-[2] mx-auto flex w-full max-w-[1440px] flex-1 flex-col items-center gap-6 px-6 pb-10 pt-6 text-xs/4 md:flex-row md:items-center md:justify-between md:gap-8 md:px-20 md:pb-[min(64px,7vh)] md:pt-[min(40px,5vh)]">
-        <Stagger className="flex flex-col items-center gap-6 md:max-w-[460px] md:-translate-y-10 md:items-start md:gap-8 md:py-12 lg:-translate-y-14">
+        <Stagger className="flex flex-col items-center gap-6 md:ml-[80px] md:max-w-[460px] md:-translate-y-10 md:items-start md:gap-8 md:py-12 lg:-translate-y-14">
           <FadeIn direction="up">
             <h1
               id="hero-heading"
@@ -87,7 +87,7 @@ export function Hero() {
         <FadeIn
           direction="scale"
           delay={0.2}
-          className="flex shrink-0 items-center justify-center px-10 md:min-h-[78svh] md:-translate-x-14 md:px-0 md:pb-[max(0px,6vh)] md:pt-[max(0px,2vh)] lg:-translate-x-20"
+          className="flex shrink-0 items-center justify-center px-10 md:min-h-[78svh] md:-translate-x-[156px] md:px-0 md:pb-[max(0px,6vh)] md:pt-[max(0px,2vh)] lg:-translate-x-[180px]"
         >
           <motion.div
             style={{ y: phoneY, scale: phoneScale, transformOrigin: 'center top' }}

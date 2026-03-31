@@ -27,8 +27,8 @@ export function FeatureInsights() {
         className="pointer-events-none absolute inset-0 z-[1] bg-[#FAF9F6]/55"
         aria-hidden
       />
-      <div className="relative z-[2] mx-auto flex max-w-[1440px] flex-col items-center gap-12 px-5 py-[min(120px,12vh)] lg:flex-row lg:items-center lg:gap-20 lg:px-20">
-        <Stagger className="flex flex-1 flex-col gap-5">
+      <div className="relative z-[2] mx-auto flex w-full max-w-[1440px] flex-col items-center gap-6 px-6 py-[min(120px,12vh)] md:flex-row md:items-center md:justify-between md:gap-8 md:px-20">
+        <Stagger className="flex flex-col items-center gap-6 text-center md:ml-[80px] md:max-w-[460px] md:items-start md:gap-8 md:text-left">
           <FadeIn direction="up">
             <p className="inline-block font-['DM_Sans',sans-serif] text-[13px]/4 font-medium uppercase tracking-widest text-[#D4502C]">
               Insights
@@ -37,7 +37,7 @@ export function FeatureInsights() {
           <FadeIn direction="up">
             <h2
               id="feature-insights-heading"
-              className="inline-block font-['Instrument_Serif',serif] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.04] tracking-[-0.03em] text-[#1A1916] lg:text-[56px]/[58px]"
+              className="inline-block font-['Instrument_Serif',serif] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.04] tracking-[-0.03em] text-[#1A1916] md:text-[56px]/[58px]"
             >
               See where it goes.
             </h2>
@@ -53,7 +53,7 @@ export function FeatureInsights() {
         <FadeIn
           direction="scale"
           delay={0.15}
-          className="phone-scale flex flex-1 items-center justify-center"
+          className="phone-scale flex shrink-0 items-center justify-center px-10 md:-translate-x-[156px] md:px-0 lg:-translate-x-[180px]"
         >
           <PhoneMockup>
             <video
