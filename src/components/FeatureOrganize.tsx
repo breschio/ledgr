@@ -1,8 +1,9 @@
+import { clipUrl } from '../clipUrl'
 import { FadeIn, Stagger } from './FadeIn'
 import { PhoneMockup } from './PhoneMockup'
 
 export function FeatureOrganize() {
-  const expenseClipSrc = `${import.meta.env.BASE_URL}clips/ExpenseClip.mp4`
+  const expenseClipSrc = clipUrl('clips/ExpenseClip.mp4')
 
   return (
     <section

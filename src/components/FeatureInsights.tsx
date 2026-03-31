@@ -1,8 +1,9 @@
+import { clipUrl } from '../clipUrl'
 import { FadeIn, Stagger } from './FadeIn'
 import { PhoneMockup } from './PhoneMockup'
 
 export function FeatureInsights() {
-  const insightsClipSrc = `${import.meta.env.BASE_URL}clips/InsightsClip.mp4`
+  const insightsClipSrc = clipUrl('clips/InsightsClip.mp4')
 
   return (
     <section

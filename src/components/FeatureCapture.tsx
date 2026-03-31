@@ -1,8 +1,9 @@
+import { clipUrl } from '../clipUrl'
 import { FadeIn, Stagger } from './FadeIn'
 import { PhoneMockup } from './PhoneMockup'
 
 export function FeatureCapture() {
-  const captureClipSrc = `${import.meta.env.BASE_URL}clips/CameraClip.mp4`
+  const captureClipSrc = clipUrl('clips/CameraClip.mp4')
 
   return (
     <section

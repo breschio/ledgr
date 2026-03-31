@@ -1,11 +1,12 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 
+import { clipUrl } from '../clipUrl'
 import { FadeIn, Stagger } from './FadeIn'
 import { PhoneMockup } from './PhoneMockup'
 
 export function Hero() {
-  const heroVideoSrc = `${import.meta.env.BASE_URL}AppFlow.mp4`
+  const heroVideoSrc = clipUrl('AppFlow.mp4')
   const sectionRef = useRef<HTMLElement | null>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
