@@ -2,12 +2,10 @@ import React from "react";
 import {
   AbsoluteFill,
   interpolate,
-  spring,
   useCurrentFrame,
   useVideoConfig,
   Easing,
 } from "remotion";
-import { PhoneFrame } from "./screens/PhoneFrame";
 import { DashboardScreen } from "./screens/DashboardScreen";
 import { CameraScreen } from "./screens/CameraScreen";
 import { ReceiptScreen } from "./screens/ReceiptScreen";
@@ -251,11 +249,6 @@ export const AppFlowVideo: React.FC = () => {
   const entryFade = interpolate(frame, [0, 18], [0, 1], {
     extrapolateRight: "clamp",
   });
-  const entryScale = spring({
-    frame,
-    fps,
-    config: { damping: 22, mass: 0.6, stiffness: 100 },
-  });
 
   const CurrentScreen = ScreenComponents[scene.id];
   const NextScreen = ScreenComponents[nextScene.id];
@@ -274,24 +267,18 @@ export const AppFlowVideo: React.FC = () => {
         backgroundColor: "#FAF9F6",
         justifyContent: "center",
         alignItems: "center",
+        opacity: entryFade * loopFade,
       }}
     >
       <div
         style={{
-          opacity: entryFade * loopFade,
-          transform: `scale(${0.93 + entryScale * 0.07})`,
+          position: "relative",
+          width: SCREEN_W,
+          height: SCREEN_H,
+          overflow: "hidden",
+          backgroundColor: "#FAF9F6",
         }}
       >
-        <PhoneFrame>
-          <div
-            style={{
-              position: "relative",
-              width: SCREEN_W,
-              height: SCREEN_H,
-              overflow: "hidden",
-              backgroundColor: "#FAF9F6",
-            }}
-          >
             {/* Next screen (rendered first = behind for slideDown) */}
             {isTransitioning && (
               <div
@@ -384,8 +371,6 @@ export const AppFlowVideo: React.FC = () => {
               visible={tapVisible}
               progress={tapProgress}
             />
-          </div>
-        </PhoneFrame>
       </div>
     </AbsoluteFill>
   );

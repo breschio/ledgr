@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 
 import { FadeIn, Stagger } from './FadeIn'
+import { PhoneMockup } from './PhoneMockup'
 
 export function Hero() {
   const heroVideoSrc = `${import.meta.env.BASE_URL}AppFlow.mp4`
@@ -70,16 +71,20 @@ export function Hero() {
           style={{ y: phoneY, scale: phoneScale, transformOrigin: 'center top' }}
           className="flex items-start justify-center"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-auto w-auto max-h-[min(68vh,640px)] max-w-[320px] md:max-h-[min(96svh,1378px)] md:max-w-[773px]"
-            aria-label="App demo: scanning a receipt, categorizing expenses, and viewing insights"
-          >
-            <source src={heroVideoSrc} type="video/mp4" />
-          </video>
+          <div className="phone-scale">
+            <PhoneMockup>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+                aria-label="App demo: scanning a receipt, categorizing expenses, and viewing insights"
+              >
+                <source src={heroVideoSrc} type="video/mp4" />
+              </video>
+            </PhoneMockup>
+          </div>
         </motion.div>
       </FadeIn>
     </section>

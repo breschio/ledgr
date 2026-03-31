@@ -22,8 +22,8 @@ export const RemotionRoot: React.FC = () => {
         component={AppFlowVideo}
         durationInFrames={550}
         fps={30}
-        width={460}
-        height={950}
+        width={390}
+        height={880}
       />
       <Composition
         id="CameraClip"

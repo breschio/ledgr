@@ -5,17 +5,17 @@ body {
 }
 
 .phone-scale {
-  zoom: min(0.65, calc(55vh / 920px));
+  zoom: min(0.82, calc(69.3vh / 920px));
 }
 
 @media (min-width: 1024px) {
   .phone-scale {
-    zoom: min(0.85, calc(68vh / 920px));
+    zoom: min(1.07, calc(85.7vh / 920px));
   }
 }
 
 @media (min-width: 1280px) {
   .phone-scale {
-    zoom: min(1, calc(72vh / 920px));
+    zoom: min(1.26, calc(90.7vh / 920px));
   }
 }
