@@ -2,6 +2,9 @@ import "./index.css";
 import { Composition } from "remotion";
 import { LedgrDemo } from "./Composition";
 import { AppFlowVideo } from "./AppFlowVideo";
+import { CameraClip } from "./clips/CameraClip";
+import { ExpenseClip } from "./clips/ExpenseClip";
+import { InsightsClip } from "./clips/InsightsClip";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -21,6 +24,30 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={460}
         height={950}
+      />
+      <Composition
+        id="CameraClip"
+        component={CameraClip}
+        durationInFrames={210}
+        fps={30}
+        width={390}
+        height={880}
+      />
+      <Composition
+        id="ExpenseClip"
+        component={ExpenseClip}
+        durationInFrames={120}
+        fps={30}
+        width={390}
+        height={880}
+      />
+      <Composition
+        id="InsightsClip"
+        component={InsightsClip}
+        durationInFrames={120}
+        fps={30}
+        width={390}
+        height={880}
       />
     </>
   );

@@ -20,7 +20,7 @@ const SCREEN_H = 880;
 const SCENE_DUR = 110;
 const TRANS_DUR = 22;
 
-type TransitionType = "none" | "slideUp" | "pushLeft";
+type TransitionType = "none" | "slideUp" | "pushLeft" | "slideDown";
 
 interface SceneConfig {
   id: string;
@@ -32,7 +32,7 @@ interface SceneConfig {
 const sceneConfigs: SceneConfig[] = [
   { id: "dashboard", transition: "none", tapX: 195, tapY: 808 },
   { id: "camera", transition: "slideUp", tapX: 195, tapY: 760 },
-  { id: "receipt", transition: "pushLeft", tapX: 195, tapY: 735 },
+  { id: "receipt", transition: "slideDown", tapX: 195, tapY: 735 },
   { id: "expense", transition: "pushLeft", tapX: 195, tapY: 830 },
   { id: "insights", transition: "pushLeft", tapX: -1, tapY: -1 },
 ];
@@ -212,6 +212,10 @@ export const AppFlowVideo: React.FC = () => {
       currentTransform = `translateX(${-transProgress * SCREEN_W * 0.3}px)`;
       currentOpacity = 1 - transProgress * 0.4;
       nextTransform = `translateX(${(1 - transProgress) * SCREEN_W}px)`;
+    } else if (type === "slideDown") {
+      currentTransform = `translateY(${transProgress * SCREEN_H}px)`;
+      currentOpacity = 1;
+      nextTransform = `scale(${0.94 + transProgress * 0.06})`;
     }
   }
 
@@ -288,6 +292,24 @@ export const AppFlowVideo: React.FC = () => {
               backgroundColor: "#FAF9F6",
             }}
           >
+            {/* Next screen (rendered first = behind for slideDown) */}
+            {isTransitioning && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: SCREEN_W,
+                  height: SCREEN_H,
+                  transform: nextTransform,
+                  willChange: "transform",
+                  zIndex: nextScene.transition === "slideDown" ? 1 : 3,
+                }}
+              >
+                <NextScreen animFrame={nextContentAnimFrame} fps={fps} />
+              </div>
+            )}
+
             {/* Current screen */}
             <div
               style={{
@@ -299,27 +321,11 @@ export const AppFlowVideo: React.FC = () => {
                 transform: currentTransform,
                 opacity: currentOpacity,
                 willChange: "transform, opacity",
+                zIndex: isTransitioning && nextScene.transition === "slideDown" ? 2 : 1,
               }}
             >
               <CurrentScreen animFrame={contentAnimFrame} fps={fps} />
             </div>
-
-            {/* Next screen slides in during transition */}
-            {isTransitioning && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: SCREEN_W,
-                  height: SCREEN_H,
-                  transform: nextTransform,
-                  willChange: "transform",
-                }}
-              >
-                <NextScreen animFrame={nextContentAnimFrame} fps={fps} />
-              </div>
-            )}
 
             {/* Edge shadow for push-left transition */}
             {isTransitioning && nextScene.transition === "pushLeft" && (

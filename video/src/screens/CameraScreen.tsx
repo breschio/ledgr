@@ -1,5 +1,4 @@
 import React from "react";
-import { staticFile } from "remotion";
 import { fadeUp, fadeIn, scaleIn } from "../anim";
 
 export interface CameraScreenProps {
@@ -27,7 +26,17 @@ export const CameraScreen: React.FC<CameraScreenProps> = ({
       </div>
       <div style={{ display: 'flex', flex: '1 1 0%', justifyContent: 'center', alignItems: 'center', padding: '24px', position: 'relative' }}>
         <div style={{ ...scaleIn(f, 6, fps, 0.92), alignSelf: 'stretch', backgroundColor: '#1A1A18', borderRadius: '16px', display: 'flex', flex: '1 1 0%', overflow: 'clip', position: 'relative' }}>
-          <div style={{ backgroundImage: `url(${staticFile('wood-table.png')})`, backgroundSize: 'cover', backgroundPosition: '51% 58%', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
+          <div
+            style={{
+              background:
+                "radial-gradient(circle at 22% 18%, rgba(255,255,255,0.08), transparent 28%), radial-gradient(circle at 78% 72%, rgba(255,255,255,0.04), transparent 24%), linear-gradient(145deg, #6F4B35 0%, #5B3D2B 26%, #7D563C 56%, #4A3226 100%)",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
+          />
           <div style={{ ...fadeIn(f, 14, 10), backgroundColor: 'rgba(255,255,255,0.94)', borderRadius: '3px', boxShadow: '0 4px 16px rgba(0,0,0,0.08)', position: 'absolute', top: '40px', left: '44px', right: '44px', bottom: '160px', display: 'flex', flexDirection: 'column', gap: '0px', padding: '20px 16px' }}>
             {/* Header */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px', paddingBottom: '10px' }}>

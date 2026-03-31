@@ -21,7 +21,7 @@ export const LedgrDemo: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: `rgb(${r},${g},${b})` }}>
-      <Sequence from={0} durationInFrames={90} name="Intro">
+      <Sequence durationInFrames={90} name="Intro">
         <IntroScene />
       </Sequence>
 
